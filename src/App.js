@@ -30,26 +30,26 @@ const App = () => {
         case url:
           if (e.wheelDeltaY < 0) {
             setTimeout(() => {
-              history.push("projet-1");
+              history.push("project-1");
             }, 500);
           }
           break;
-        case url + "projet-1":
-          wheelRouter("projet-2", "");
+        case url + "project-1":
+          wheelRouter("project-2", "");
           break;
-        case url + "projet-2":
-          wheelRouter("projet-3", "projet-1");
+        case url + "project-2":
+          wheelRouter("project-3", "project-1");
           break;
-        case url + "projet-3":
-          wheelRouter("projet-4", "projet-2");
+        case url + "project-3":
+          wheelRouter("project-4", "project-2");
           break;
-        case url + "projet-4":
-          wheelRouter("contact", "projet-3");
+        case url + "project-4":
+          wheelRouter("contact", "project-3");
           break;
         case url + "contact":
           if (e.wheelDeltaY > 0) {
             setTimeout(() => {
-              history.push("projet-4");
+              history.push("project-4");
             }, 500);
           }
           break;
@@ -64,10 +64,10 @@ const App = () => {
     <AnimatePresence>
       <Switch location={location} key={location.pathname}>
         <Route exact path="/" component={Home} />
-        <Route path="/projet-1" component={Project1} />
-        <Route path="/projet-2" component={Project2} />
-        <Route path="/projet-3" component={Project3} />
-        <Route path="/projet-4" component={Project4} />
+        <Route path="/project-1" component={Project1} />
+        <Route path="/project-2" component={Project2} />
+        <Route path="/project-3" component={Project3} />
+        <Route path="/project-4" component={Project4} />
         <Route path="/contact" component={Contact} />
         <Redirect to='/' />
       </Switch>
